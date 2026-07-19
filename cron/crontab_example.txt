@@ -1,0 +1,15 @@
+# =============================================================================
+# Linux Server Health Check Toolkit - example crontab entries
+# Edit the paths below to match where you cloned this repository on your
+# server, then install with: crontab -e
+# =============================================================================
+
+# Run all health checks + generate the daily Markdown report at 7:00 AM
+0 7 * * * /opt/linux-server-health-toolkit/scripts/run_all_checks.sh >> /opt/linux-server-health-toolkit/logs/cron.log 2>&1
+
+# Optional: lightweight hourly monitoring of just disk + memory
+0 * * * * /opt/linux-server-health-toolkit/scripts/check_disk.sh >> /opt/linux-server-health-toolkit/logs/cron.log 2>&1
+0 * * * * /opt/linux-server-health-toolkit/scripts/check_memory.sh >> /opt/linux-server-health-toolkit/logs/cron.log 2>&1
+
+# Rotate logs weekly, Sunday at 2:00 AM
+0 2 * * 0 /opt/linux-server-health-toolkit/scripts/log_rotate.sh >> /opt/linux-server-health-toolkit/logs/cron.log 2>&1
