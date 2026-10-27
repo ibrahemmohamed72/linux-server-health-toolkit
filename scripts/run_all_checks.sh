@@ -23,6 +23,7 @@ run_check() {
     fi
 }
 
+run_check "CPU check" "${SCRIPT_DIR}/check_cpu.sh"
 run_check "disk check"    "${SCRIPT_DIR}/check_disk.sh"
 run_check "memory check"  "${SCRIPT_DIR}/check_memory.sh"
 run_check "service check" "${SCRIPT_DIR}/check_services.sh"
