@@ -196,3 +196,8 @@ Download the HTML report and open it in a browser.
 Based on the original toolkit by Jahnavi A Reddy: https://github.com/jjahnaviareddy/linux-server-health-toolkit
 
 Original MIT license and copyright notice retained.
+
+
+## Report Preview
+
+![HTML health report](health-report.png)
