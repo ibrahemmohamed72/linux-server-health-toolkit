@@ -171,3 +171,28 @@ linux-server-health-toolkit/
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+
+## Enhancements in This Fork
+
+Tested on AWS EC2 with Ubuntu 22.04.5 LTS.
+
+- CPU usage monitoring with configurable warning and critical thresholds.
+- Standalone HTML reports using the Python standard library.
+- Automatic HTML generation with each health-check run.
+- Latest disk result per filesystem and mount.
+- Fixed service-state handling to prevent malformed JSON records.
+
+### Usage
+
+Run: `./scripts/run_all_checks.sh`
+
+Reports: `reports/report-YYYY-MM-DD.md` and `reports/report-YYYY-MM-DD.html`.
+
+Download the HTML report and open it in a browser.
+
+### Attribution
+
+Based on the original toolkit by Jahnavi A Reddy: https://github.com/jjahnaviareddy/linux-server-health-toolkit
+
+Original MIT license and copyright notice retained.
