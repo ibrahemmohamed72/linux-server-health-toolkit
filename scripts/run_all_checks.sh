@@ -40,5 +40,16 @@ else
     log_line "WARNING" "python3 not found; skipping report generation"
 fi
 
+if [[ -n "${PYTHON_BIN}" ]]; then
+    log_line "INFO" "Generating HTML report"
+    "${PYTHON_BIN}" "${PROJECT_ROOT}/python/generate_html.py" \
+        "${REPORT_DIR}/report-${DATE_ONLY}.md"
+    html_rc=$?
+    if (( html_rc != 0 )); then
+        log_line "ERROR" "HTML report generation failed"
+        OVERALL_EXIT=2
+    fi
+fi
+
 log_line "INFO" "All checks complete. Overall exit code: ${OVERALL_EXIT}"
 exit ${OVERALL_EXIT}
